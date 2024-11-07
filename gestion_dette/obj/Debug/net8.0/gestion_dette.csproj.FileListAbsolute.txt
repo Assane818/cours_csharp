@@ -1,0 +1,14 @@
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\bin\Debug\net8.0\gestion_dette.exe
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\bin\Debug\net8.0\gestion_dette.deps.json
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\bin\Debug\net8.0\gestion_dette.runtimeconfig.json
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\bin\Debug\net8.0\gestion_dette.dll
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\bin\Debug\net8.0\gestion_dette.pdb
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.AssemblyInfoInputs.cache
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.AssemblyInfo.cs
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.csproj.CoreCompileInputs.cache
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.dll
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\refint\gestion_dette.dll
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.pdb
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\gestion_dette.genruntimeconfig.cache
+C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\obj\Debug\net8.0\ref\gestion_dette.dll
