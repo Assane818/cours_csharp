@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = gestion_dette
-build_property.ProjectDir = C:\Users\assan\OneDrive\Documents\Csarp\gestion_dette\gestion_dette\
+build_property.ProjectDir = c:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\gestion_dette\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

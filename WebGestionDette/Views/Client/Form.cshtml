@@ -1,0 +1,71 @@
+@using WebGestionDette.Entities
+@model Client
+<div class="flex justify-end items-center w-4/5 h-screen">
+    <div class="flex flex-col sm:rounded-lg items-end w-9/12 bg-gray-100 p-5 ml-28 mt-12 shadow-lg"
+        style="max-height: 75vh; overflow-y: auto; border: 2px solid #e2e8f0">
+
+        <!-- Titre du form en haut du cadre -->
+        <div class="w-full bg-gray-200 rounded-lg p-4 shadow-md mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 text-center">Ajouter un Client</h2>
+        </div>
+
+        <!-- Formulaire ajout client -->
+        <div class="w-full">
+            <form method="post">
+                <div>
+                    <input asp-for="Surname" placeholder="Surname"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="Surname" class="text-red-600"></span>
+
+                    <input asp-for="Phone" placeholder="Telephone"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="Phone" class="text-red-600"></span>
+
+                    <input asp-for="Address" placeholder="Address"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="Address" class="text-red-600"></span>
+                </div>
+
+                <div id="formUser" class="mt-10 hidden">
+                    <div class="w-full bg-gray-200 rounded-lg p-4 shadow-md mb-4">
+                        <h2 class="text-xl font-semibold text-gray-800 text-center">Ajouter un Utilisateur</h2>
+                    </div>
+
+                    <input asp-for="User.Nom" placeholder="Nom"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="User.Nom" class="text-red-600"></span>
+
+                    <input asp-for="User.Prenom" placeholder="Prénom"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="User.Prenom" class="text-red-600"></span>
+
+                    <input asp-for="User.Login" placeholder="Login"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="User.Login" class="text-red-600"></span>
+
+                    <input asp-for="User.Password" type="password" placeholder="Password"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="User.Password" class="text-red-600"></span>
+                </div>
+
+                <!-- Ajout d'une toggle switch -->
+                <div class="mt-2 overflow-hidden">
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer hidden" id="toggleSwitch" name="toggleSwitch" value="true"/>
+                        <div
+                            class="relative w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 dark:peer-focus:ring-green-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:- peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-green-600">
+                        </div>
+                        <span class="ms-3 text-sm font-medium dark:text-gray-900">Créer un Utilisateur 🤵🏾‍♂️</span>
+                    </label>
+                </div>
+
+                <button type="submit"
+                    class="flex items-center justify-center mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">Save
+                </button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+<script src="~/js/formClient.js"></script>
