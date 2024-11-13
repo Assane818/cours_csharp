@@ -1,0 +1,15 @@
+using WebGestionDette.Core;
+using WebGestionDette.Models;
+using WebGestionDette.Models.Enum;
+
+namespace GesDette.Models
+{
+    public interface IUserService : IService<User>
+    {
+        User? SelectByLogin(String login);
+        bool UpdateEtat(User user, bool etat);
+        List<User> SelectAllUsersByEtat();
+        List<User> SelectAllUsersByRole(Role role);
+        User? SelectUserConnect(String login, String password);
+    }
+}

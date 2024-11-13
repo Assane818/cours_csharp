@@ -1,30 +1,30 @@
 using Microsoft.AspNetCore.Mvc;
-using WebGestionDette.Entities;
 using WebGestionDette.Models;
+using WebGestionDette.Service;
 
 namespace WebGestionDette.Controllers
 {
     public class ClientController : Controller
     {
-        private IClientModel clientModel;
-        
-        public ClientController(IClientModel clientModel)
+        private readonly IClientService _clientService;
+
+        public ClientController(IClientService clientService)
         {
-            this.clientModel = clientModel;
+            _clientService = clientService;
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var clients = clientModel.SelectAll();
+            var clients = await _clientService.SelectClientsAsync();
             return View(clients);
         }
-        
+
         public IActionResult Form()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Form(Client client, bool toggleSwitch)
+        public async Task<IActionResult> Form(Client client, bool toggleSwitch)
         {
             if (!toggleSwitch)
             {
@@ -36,14 +36,15 @@ namespace WebGestionDette.Controllers
             }
             if (ModelState.IsValid)
             {
-                clientModel.Insert(client);
+                await _clientService.Insert(client);
                 return RedirectToAction("Index");
             }
             return View(client);
         }
 
-        public IActionResult Supprime(int clientId) {
-            clientModel.Delete(clientId);
+        public IActionResult Supprime(int clientId)
+        {
+            _clientService.Delete(clientId);
             return RedirectToAction("Index");
         }
     }

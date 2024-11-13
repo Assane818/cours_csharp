@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using WebGestionDette.Data;
@@ -11,9 +12,11 @@ using WebGestionDette.Data;
 namespace WebGestionDette.Migrations
 {
     [DbContext(typeof(WebGesDetteContext))]
-    partial class WebGesDetteContextModelSnapshot : ModelSnapshot
+    [Migration("20241113163802_InitialCreate")]
+    partial class InitialCreate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
