@@ -44,7 +44,8 @@ namespace GesDette.Data.Controllers
                     char rp = Console.ReadKey().KeyChar;
                     if (rp == 'O' || rp == 'o') {
                         User user = userView.Saisie();
-                        int userId = userService.Save(user);
+                        // int userId = userService.Save(user);
+                        // client1.User = userService.GetById(userId);
                         client1.User = user;
                     }
                     Console.WriteLine(client1);

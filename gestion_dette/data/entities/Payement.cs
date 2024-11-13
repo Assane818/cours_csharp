@@ -3,32 +3,22 @@ using GesDette.Data.entities;
 namespace GesDette.Data.Entities
 {
     public class Payement : AbstractEntity {
-        private DateTime date;
-        private double montantPayer;
-        private Dette dette;
-        private static int nbrePayement;
 
-        public Payement() {
-            nbrePayement++;
-            id = nbrePayement;
-        }
-
-        public int Id {get => id; set => id = value;}
-        public DateTime Date {get => date; set => date = value;}
-        public double MontantPayer {get => montantPayer; set => montantPayer = value;}
-        public Dette Dette {get => dette; set => dette = value;}
+        public DateTime Date {get; set;}
+        public double MontantPayer {get; set;}
+        public Dette Dette {get; set;}
 
         public override string ToString() {
-            return $"Payement n°{id}, date : {date.ToShortDateString()}, montant : {montantPayer} ���";
+            return $"Payement n°{Id}, date : {Date.ToShortDateString()}, montant : {MontantPayer} ���";
         }
         public bool Equals(Payement obj) {
             if (this == obj) return true;
             if (obj == null) return false;
             Payement payement = (Payement) obj;
-            return id == payement.id &&
-                    object.Equals(date, payement.date) &&
-                    object.Equals(montantPayer, payement.montantPayer) &&
-                    object.Equals(dette, payement.dette);  
+            return Id == payement.Id &&
+                    object.Equals(Date, payement.Date) &&
+                    object.Equals(MontantPayer, payement.MontantPayer) &&
+                    object.Equals(Dette, payement.Dette); 
         }
     }
 }

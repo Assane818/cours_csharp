@@ -1,9 +1,14 @@
 ﻿using GesDette.Core.Controllers;
+using GesDette.Core.Db;
+using GesDette.Core.Service;
 using GesDette.data.repository.impl;
 using GesDette.Data.Controllers;
 using GesDette.Data.Entities;
 using GesDette.Data.Enums;
 using GesDette.Data.Repository;
+using GesDette.Data.Repository.Dapper;
+using GesDette.Data.Repository.Db;
+using GesDette.Data.Repository.EntityFramework;
 using GesDette.Data.Repository.Impl;
 using GesDette.Data.Service;
 using GesDette.Data.Service.Impl;
@@ -14,8 +19,9 @@ namespace GesDette
 {
     internal class Program {
         static void Main(string[] args) {
-            IUserRepository userRepository = new UserRepositoryImplList();
-            IClientRepository clientRepository = new ClientRepositoryImplList();
+            IDataBase dataBase = new DataBase();
+            IUserRepository userRepository = new UserRepositoryImplEf();
+            IClientRepository clientRepository = new ClientRepositoryImplEf();
             IArticleRepository articleRepository = new ArticleRepositoryImplList();
             IPayementRepository payementRepository = new PayementRepositoryImplList();
             IDetteRepository detteRepository = new DetteRepositoryImplList();
@@ -34,6 +40,7 @@ namespace GesDette
             IPayementView payementView = new PayementViewImpl();
             IDetteView detteView = new DetteViewImpl(clientService, articleService);
             IDetailView detailView = new DetailViewImpl();
+
 
             do {
                 User userConnect = userView.SaisieConnexion();

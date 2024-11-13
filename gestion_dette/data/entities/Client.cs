@@ -3,43 +3,32 @@ using GesDette.Data.entities;
 namespace GesDette.Data.Entities
 {
     public class Client : AbstractEntity {
-        private string surname;
-        private string phone;
-        private string address;
-        private User user;
-        private static int nbreClient;
-        List<Dette> dettes = new List<Dette>();
 
-        public Client() {
-            nbreClient++;
-            id = nbreClient;
-        }
 
-        public int Id {get => id; set => id = value;}
-        public string Surname {get => surname; set => surname = value;} 
-        public string Phone {get => phone; set => phone = value;}
-        public string Address {get => address; set => address = value;}
-        public User User {get => user; set => user = value;}
-        public List<Dette> Dettes {get => dettes; set => dettes = value;}
+        public string Surname {get; set;} 
+        public string Phone {get; set;}
+        public string Address {get; set;}
+        public User? User {get; set;}
+        public List<Dette> Dettes {get; set;}
 
         public override string ToString() {
             return "Client[" +
-                    "id=" + id +
-                    ", surnom='" + surname + '\'' +
-                    ", telephone='" + phone + '\'' +
-                    ", adresse='" + address + '\'' +
-                    ", user=" + (user != null ? user.ToString() : "null") +
-                    ", dettes=" + dettes +'\'' + ']' ;
+                    "id=" + Id +
+                    ", surnom='" + Surname + '\'' +
+                    ", telephone='" + Phone + '\'' +
+                    ", adresse='" + Address + '\'' +
+                    ", user=" + (User != null ? User.ToString() : "null") +
+                    ", dettes=" + Dettes +'\'' + ']' ;
         }
 
-        public bool equals(Client obj) {
+        public bool Equals(Client obj) {
             if (this == obj) return true;
             if (obj == null) return false;
             Client client = (Client) obj;
-            return id == client.id &&
-                    object.Equals(surname, client.surname) &&
-                    object.Equals(phone, client.phone) &&
-                    object.Equals(address, client.address);  
+            return Id == client.Id &&
+                    object.Equals(Surname, client.Surname) &&
+                    object.Equals(Phone, client.Phone) &&
+                    object.Equals(Address, client.Address);  
         }
     }
 }
