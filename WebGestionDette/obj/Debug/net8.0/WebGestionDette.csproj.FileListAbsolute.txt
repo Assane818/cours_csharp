@@ -110,3 +110,4 @@ C:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\WebGestionDette\obj\Debu
 C:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\WebGestionDette\obj\Debug\net8.0\WebGestionDette.pdb
 C:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\WebGestionDette\obj\Debug\net8.0\WebGestionDette.genruntimeconfig.cache
 C:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\WebGestionDette\obj\Debug\net8.0\ref\WebGestionDette.dll
+C:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\WebGestionDette\obj\Debug\net8.0\WebGestionDette.sourcelink.json
