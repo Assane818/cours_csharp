@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebGestionDette")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5a010cee165f8844436fc11a5f29a31fc1895788")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea6dfb239188077b8cd6ad64700040c714c8330f")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebGestionDette")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebGestionDette")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
