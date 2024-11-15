@@ -5,11 +5,11 @@ namespace WebGestionDette.Service
 {
     public interface IClientService : IService<Client>
     {
-        Client? SelectByPhone(String phone);
-        Client? SelectBySurname(String surname);
-        List<Client> SelectClientAccount();
-        List<Client> SelectClientNoAccount();
         Client? SelectByUser(User user);
-        void Delete(int id);
+        Task Delete(int id);
+        Task<IEnumerable<Client>> SelectClientsAsync();
+        Task<IEnumerable<Client>> SelectClientsAsync(int pageNumber, int limit);
+        Task<Client?> SelectBySurname(string surname);
+
     }
 }

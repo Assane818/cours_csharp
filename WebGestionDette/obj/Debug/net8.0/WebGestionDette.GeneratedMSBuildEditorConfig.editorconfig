@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = WebGestionDette
 build_property.RootNamespace = WebGestionDette
@@ -18,6 +26,10 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\assan\OneDrive\Documents\Csarp\WebGestionDette\WebGestionDette
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Client/ClientDette.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XENsaWVudERldHRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Client/Form.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEZvcm0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -26,12 +38,32 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2xpZW50XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Dette/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0dGVcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Dette/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGV0dGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Payement/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5ZW1lbnRcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Payement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5ZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Payement/PayementDette.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGF5ZW1lbnRcUGF5ZW1lbnREZXR0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/assan/OneDrive/Documents/Csarp/WebGestionDette/WebGestionDette/Views/Shared/Error.cshtml]

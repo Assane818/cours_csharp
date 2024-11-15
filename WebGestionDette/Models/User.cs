@@ -10,6 +10,6 @@ namespace WebGestionDette.Models
         public string Login {get; set;}
         public string Password {get; set;}
         public bool Etat {get; set;} = true;
-        public Role Role {get; set;} 
+        public Role Role {get; set;}
     }
 }

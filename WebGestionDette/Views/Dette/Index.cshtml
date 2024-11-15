@@ -1,0 +1,145 @@
+@using WebGestionDette.Models.Enum;
+@model IEnumerable<WebGestionDette.Models.Dette>
+
+@{
+    ViewData["Title"] = "Liste des Dettes";
+}
+
+<div class="flex justify-center items-center w-full h-screen">
+    <div class="flex flex-col sm:rounded-lg items-end w-8/12 bg-gray-100 p-5 ml-52 shadow-lg mt-12"
+        style="height: 80vh; max-height: 80vh; border: 2px solid #e2e8f0; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);">
+
+        <!-- Titre du tableau en haut du cadre -->
+        <div class="w-full bg-gray-200 rounded-lg p-4 shadow-md mb-5">
+            <h2 class="text-xl font-semibold text-gray-800 text-center">Liste Des Dettes</h2>
+        </div>
+
+        <div class="w-full flex justify-start mt-2 -mb-9">
+            <form asp-action="Index">
+                <select
+                    class="px-2 py-2 border border-blue-600 rounded-lg mr-2 h-9 text-gray-700 focus:outline-none shadow-lg focus:shadow-indigo-700"
+                    placeholder="Etat" name="etat" id="etat">
+                    <option value="">Tous</option>
+                    <option value="solde">Solde</option>
+                    <option value="nonSolde">Non Solde</option>
+                </select>
+                <button type="submit"
+                    class="px-4 text-white bg-blue-600 rounded hover:bg-blue-500 transition duration-300 h-9 shadow-lg">Filtrer</button>
+            </form>
+            <form asp-action="Index" class="mx-5">
+                <input type="text" name="surname"
+                    class="px-2 py-2 border border-blue-600 rounded-lg mr-2 h-9 text-gray-700 focus:outline-none shadow-lg focus:shadow-indigo-700"
+                    placeholder="Rechercher">
+                <button type="submit"
+                    class="px-4 text-white bg-blue-600 rounded hover:bg-blue-500 transition duration-300 h-9 shadow-lg">Filtrer</button>
+            </form>
+        </div>
+
+        <button class="flex justify-end px-6 pt-4 mb-4 -mt-2">
+            <a asp-action="Create"
+                class="px-4 py-2 text-white bg-blue-600 rounded hover:bg-blue-500 transition duration-300 shadow-lg">Ajouter</a>
+        </button>
+
+        <!-- Conteneur pour la table avec max-height pour la limite de taille et overflow-y-auto pour le scroll -->
+        <div class="w-full overflow-y-auto max-h-96 bg-white rounded-lg shadow-lg">
+            <table class="p-10 w-full text-sm text-left rtl:text-right text-gray-700">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-200 text-center">
+                    <tr>
+                        <th scope="col" class="px-6 py-3">
+                            @Html.DisplayNameFor(model => model.Date)
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            @Html.DisplayNameFor(model => model.Montant)
+                        </th>
+                        <th scope="col" class="px-6 py-3">
+                            @Html.DisplayNameFor(model => model.MontantVerser)
+                        </th>
+                        <th scope="col" class="px-6 py-3">Montant Restant</th>
+                        <th scope="col" class="px-6 py-3">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr class="odd:bg-gray-100 even:bg-gray-50 border-b border-gray-300 text-center">
+                            <td class="px-6 py-4">
+                                @Html.DisplayFor(modelItem => item.Date)
+                            </td>
+                            <td class="px-6 py-4">
+                                @Html.DisplayFor(modelItem => item.Montant)
+                            </td>
+                            <td class="px-6 py-4">
+                                @Html.DisplayFor(modelItem => item.MontantVerser)
+                            </td>
+                            <td class="px-6 py-4">
+                                @(item.Montant - item.MontantVerser)
+                            </td>
+                            <td class="px-6 py-4">
+                                @if (item.Montant != item.MontantVerser)
+                                {
+                                    <a asp-controller="Payement" asp-action="PayementDette" asp-route-detteId="@item.Id"
+                                        class="font-medium text-black hover:text-blue-500 transition duration-300 mr-2">
+                                        <i class='bx bxs-credit-card-alt'></i>
+                                    </a>
+                                }
+                                <a asp-action="Delete" asp-route-detteId="@item.Id"
+                                    class="font-medium text-red-600 hover:text-red-500 transition duration-300">
+                                    <i class="fas fa-trash"></i>
+                                </a>
+                            </td>
+                        </tr>
+
+                    }
+
+                    <tr>
+                        @if (Model.Count() == 0)
+                        {
+                            <td colspan="6" class="px-6 py-4 text-center text-gray-500">Aucun client trouvé.</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Pagination -->
+        <div class="flex justify-center items-center w-full mt-4 @(ViewBag.MaxPages < 1 ? "hidden" : "")">
+            <nav aria-label="Page navigation">
+                <ul class="inline-flex items-center -space-x-px">
+                    @if (ViewBag.CurrentPage > 1)
+                    {
+                        <li>
+                            <a asp-action="Index" asp-route-pageNumber="@(ViewBag.CurrentPage - 1)" asp-route-limit="4"
+                                asp-route-etat="@ViewBag.Etat"
+                                class="px-3 py-2 text-gray-700 bg-gray-300 border border-gray-400 rounded-l-lg hover:bg-gray-400 transition duration-300">
+                                Previous
+                            </a>
+                        </li>
+                    }
+
+                    @for (int i = 1; i <= ViewBag.MaxPages; i++)
+                    {
+                        <li>
+                            <a asp-action="Index" asp-route-pageNumber="@i" asp-route-limit="4"
+                                asp-route-etat="@ViewBag.Etat"
+                                class="px-3 py-2 text-gray-700 bg-gray-300 border border-gray-400 hover:bg-gray-400 transition duration-300 @(ViewBag.CurrentPage == i ? "bg-indigo-500 text-white" : "")">
+                                @i
+                            </a>
+                        </li>
+                    }
+
+                    @if (ViewBag.CurrentPage < ViewBag.MaxPages)
+                    {
+                        <li>
+                            <a asp-action="Index" asp-route-pageNumber="@(ViewBag.CurrentPage + 1)" asp-route-limit="4"
+                                asp-route-etat="@ViewBag.Etat"
+                                class="px-3 py-2 text-gray-700 bg-gray-300 border border-gray-400 rounded-r-lg hover:bg-gray-400 transition duration-300">
+                                Next
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</div>

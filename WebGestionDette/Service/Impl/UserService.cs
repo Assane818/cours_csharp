@@ -1,17 +1,17 @@
-using GesDette.Models;
 using WebGestionDette.Core;
+using WebGestionDette.Models;
 using WebGestionDette.Models.Enum;
 
-namespace WebGestionDette.Models.Impl
+namespace WebGestionDette.Service.Impl
 {
     public class UserService : IUserService
     {
-        public int Insert(User entity)
+        public Task<int> Insert(User entity)
         {
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Client>> SelectClientsAsync()
+        public Task<IEnumerable<Client>> SelectClientsAsync(int pageNumber, int limit)
         {
             throw new NotImplementedException();
         }
@@ -26,10 +26,7 @@ namespace WebGestionDette.Models.Impl
             throw new NotImplementedException();
         }
 
-        public User? SelectById(int id)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public User? SelectByLogin(string login)
         {
@@ -46,7 +43,15 @@ namespace WebGestionDette.Models.Impl
             throw new NotImplementedException();
         }
 
-        Task<int> IService<User>.Insert(User entity)
+        public Task<IEnumerable<Client>> SelectClientsAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+
+
+
+        public Task<User?> SelectById(int id)
         {
             throw new NotImplementedException();
         }

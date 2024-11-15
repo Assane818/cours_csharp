@@ -1,8 +1,9 @@
 using Microsoft.EntityFrameworkCore;
+using WebGestionDette.Core;
 using WebGestionDette.Data;
-using WebGestionDette.Service;
+using WebGestionDette.Models;
 
-namespace WebGestionDette.Models.Impl
+namespace WebGestionDette.Service.Impl
 {
     public class ClientService : IClientService
     {
@@ -11,36 +12,30 @@ namespace WebGestionDette.Models.Impl
         {
             _context = context;
         }
-        public void Delete(int id)
+        public async Task Delete(int id)
         {  
-            _context.Remove(SelectById(id)!);
-            _context.SaveChanges();
+            _context.Remove(await SelectById(id));
+            await _context.SaveChangesAsync();
         }
 
         public async Task<int> Insert(Client entity)
         {
-            await _context.Clients.AddAsync(entity);
+            _context.Clients.Add(entity);
             return await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Client>> SelectClientsAsync()
+        public async Task<IEnumerable<Client>> SelectClientsAsync(int pageNumber, int limit)
         {
-            return await _context.Clients.Include(c => c.User).ToListAsync();
+            return await _context.Clients
+                .Include(c => c.User)
+                .Skip((pageNumber - 1) * limit)
+                .Take(limit)
+                .ToListAsync();
         }
 
-        public Client? SelectById(int id)
+        public async Task<Client?> SelectById(int id)
         {
-            return _context.Clients.FirstOrDefault(c => c.Id == id);
-        }
-
-        public Client? SelectByPhone(string phone)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Client? SelectBySurname(string surname)
-        {
-            throw new NotImplementedException();
+            return await _context.Clients.FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public Client? SelectByUser(User user)
@@ -48,14 +43,14 @@ namespace WebGestionDette.Models.Impl
             throw new NotImplementedException();
         }
 
-        public List<Client> SelectClientAccount()
+        public async Task<IEnumerable<Client>> SelectClientsAsync()
         {
-            throw new NotImplementedException();
+            return await _context.Clients.Include(c => c.User).ToListAsync();
         }
 
-        public List<Client> SelectClientNoAccount()
+        public async Task<Client?> SelectBySurname(string surname)
         {
-            throw new NotImplementedException();
+            return await _context.Clients.FirstOrDefaultAsync(c => c.Surname == surname);
         }
     }
 }

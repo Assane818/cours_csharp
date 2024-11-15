@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using WebGestionDette.Data;
 using WebGestionDette.Data.Fixtures;
-using WebGestionDette.Models.Impl;
+using WebGestionDette.Service.Impl;
 using WebGestionDette.Service;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +12,7 @@ builder.Services.AddDbContext<WebGesDetteContext>(options =>
     options.UseNpgsql(connectionString));
 
 builder.Services.AddScoped<IClientService, ClientService>();
+builder.Services.AddScoped<IDetteService, DetteService>();
 builder.Services.AddScoped<ClientFixtures>();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -43,6 +44,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Client}/{action=Index}");
 
 app.Run();

@@ -2,7 +2,7 @@ using WebGestionDette.Core;
 using WebGestionDette.Models;
 using WebGestionDette.Models.Enum;
 
-namespace GesDette.Models
+namespace WebGestionDette.Service
 {
     public interface IUserService : IService<User>
     {

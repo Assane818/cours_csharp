@@ -1,0 +1,31 @@
+@model WebGestionDette.Models.Payement
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="flex justify-end items-center w-4/5 h-screen">
+    <div class="flex flex-col sm:rounded-lg items-end w-9/12 bg-gray-100 p-5 ml-28 mt-12 shadow-lg"
+        style="max-height: 75vh; overflow-y: auto; border: 2px solid #e2e8f0">
+
+        <!-- Titre du form en haut du cadre -->
+        <div class="w-full bg-gray-200 rounded-lg p-4 shadow-md mb-4">
+            <h2 class="text-xl font-semibold text-gray-800 text-center">Ajouter un Payement</h2>
+        </div>
+
+        <!-- Formulaire ajout client -->
+        <div class="w-full">
+            <form method="post">
+                <div>
+                    <input asp-for="MontantPayer" placeholder="Montant payer"
+                        class="block w-full rounded-full bg-violet-100 text-xl border-2 border-purple-500 p-4 placeholder-purple-400 focus:text-violet-950 focus:border-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 mb-4">
+                    <span asp-validation-for="MontantPayer" class="text-red-600"></span>
+                </div>
+
+                <button type="submit"
+                    class="flex items-center justify-center mt-4 w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded transition duration-300">Save
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
